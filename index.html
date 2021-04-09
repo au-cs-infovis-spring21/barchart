@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>D3 Tabular Vis-Pollution</title>
+  <title>D3 Tabular Vis-Income</title>
   <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 <body>
@@ -23,13 +23,13 @@
           //Var Scales
               var yScale = d3.scaleLinear()
                     .domain([0, d3.max(data, function(d){
-                      return +(d["Both sexes"]);
+                      return +(d["Average Household Income by Race/Ethnicity (Dollars) "]);
                     })])
                 .range([0, h/2]);
 
               var colorScale = d3.scaleLinear()
                    .domain([0, d3.max(data, function(d){
-                     return +(d["Both sexes"]);
+                     return +(d["Average Household Income by Race/Ethnicity (Dollars) "]);
                    })])
                .range([0, 255]);
           //Call Rect to make everything a rectangle
@@ -43,13 +43,13 @@
                     return w / data.length * i;
               })
                   .attr("height", function(d){
-                      return yScale(d["Both sexes"]);
+                      return yScale(d["Average Household Income by Race/Ethnicity (Dollars) "]);
                   })
                   .attr("y", function(d){
-                      return h/2-yScale(d["Both sexes"]);
+                      return h/2-yScale(d["Average Household Income by Race/Ethnicity (Dollars)"]);
                       })
               .attr("fill", function(d){
-                    var f = colorScale(d["Both sexes"]);
+                    var f = colorScale(d["Average Household Income by Race/Ethnicity (Dollars) "]);
                    if(f <= 20)
                          return "rgb(" + 139 + ",0, 255)"; //return blue
                    else
